@@ -28,26 +28,26 @@ Advanced
 
 When you create a UserAgent object, the current user agent string is used, namely $_SERVER['HTTP_USER_AGENT']. You can specify another user agent string:
 
-  $userAgent = new UserAgent("MojeekBot/0.2 (archi; http://www.mojeek.com/bot.html)");
-  $userAgent->getBrowserName();//mojeekbot
-  $userAgent->getBrowserVersion();//0.2
+       $userAgent = new UserAgent("MojeekBot/0.2 (archi; http://www.mojeek.com/bot.html)");
+       $userAgent->getBrowserName();//mojeekbot
+       $userAgent->getBrowserVersion();//0.2
 
-  //use current user agent string
-  $userAgent = new UserAgent($_SERVER['HTTP_USER_AGENT']);
-  //this is equivalent to:
-  $userAgent = new UserAgent();
+       //use current user agent string
+       $userAgent = new UserAgent($_SERVER['HTTP_USER_AGENT']);
+       //this is equivalent to:
+       $userAgent = new UserAgent();
 
 ##Custom parser class
 
 By default, UserAgentStringParser is used to analyse the user agent string. You can replace the parser instance and customize it to match your needs:
 
-  //create a custom user agent string parser
-  class myCustomUserAgentStringParser extends UserAgentStringParser {
-       //overrides methods
-  }
+      //create a custom user agent string parser
+      class myCustomUserAgentStringParser extends UserAgentStringParser {
+           //overrides methods
+      }
 
-  //end inject the custom parser when creating user agent
-  $userAgent = new UserAgent(null, myCustomUserAgentParser);
+      //end inject the custom parser when creating user agent
+      $userAgent = new UserAgent(null, myCustomUserAgentParser);
 
 
 Why you should use it
